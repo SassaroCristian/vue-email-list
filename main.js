@@ -6,7 +6,8 @@ createApp({
             userMails: Array.from({ length: 10 }, () => ({
                 user: "User Email",
                 generatedEmail: ""
-            }))
+            })),
+            showEmails: false
         };
     },
     methods: {
@@ -16,6 +17,9 @@ createApp({
                     this.userMails[index].generatedEmail = resp.data.response;
                 });
             });
+        },
+        toggleEmailsVisibility() {
+            this.showEmails = !this.showEmails;
         }
     },
     mounted() {

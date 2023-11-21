@@ -9,9 +9,12 @@
 </head>
 <body>
     <div id="app">
-        <li v-for="(mail, index) in userMails"  :key="index">
-            {{ mail.generatedEmail }}
-        </li>
+        <button @click="toggleEmailsVisibility">Toggle Emails Visibility</button>
+        <div v-if="showEmails">
+            <li v-for="(mail, index) in userMails" :key="index">
+                {{ mail.generatedEmail }}
+            </li>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
